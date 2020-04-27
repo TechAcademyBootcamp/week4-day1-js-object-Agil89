@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            q1:['5 materik var','t'],
+            q2:['en uzun cay amazon','f'],
+            q3:['en yaxsi masin vaz','t'],
+            q4:['en boyuk olke rusiya','t'],
+            q5:['en boyuk gol baykal','f'],
+            q6:['en balaca olke vatikan','t'],
+            q7:['en boyuk okean sakit','t'],
+            q8:['en boyuk heyvan ayi','f'],
+            q9:['en hundur agac evkalipt','t'],
+            q10:['bele ozun necesen?','t'],
+
+            
+            
+        }
+        function askQuestion() {
+                var point_counter = 0;
+                for (x in obj){
+                    var answer = prompt(x +":" + obj[x][0]);
+                    if(answer === obj[x][1]){
+                       alert("True answer! Good job!");
+                       point_counter++;
+                    }
+                    else{
+                        alert("Ups..you are loser!")
+                    }
+                }
+                alert("Here are your points: "+point_counter);
+            }
+
+        askQuestion();
+        
+    </script>
+</body>
+</html>

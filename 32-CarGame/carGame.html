@@ -6,6 +6,7 @@
   </head>
   <body>
 
+    <p>Input a function that you want to call: <input type="text" id="fname" onkeyup="car.inputFunc()">
     <script>
 
       var car = {
@@ -43,26 +44,23 @@
 
         honk: function() {
           alert("Honk! Honk!");
-        }
+        },
+
+        inputFunc: function(){
+          var input = document.getElementById("fname");
+          if (input.value == "a"){
+              this.driveToWork();
+          }
+          else if (input.value == "b"){
+              this.driveAroundWorld();
+          }
+          else if (input.value == "c"){
+            reWriteStats();
+          }
+      }
       };
 
-
-      // How would we log...
-
-      // The car's make?
-      console.log(car.make);
-
-      // The car's model?
-      console.log(car.model);
-      // The car's mileage?
-      console.log(car.mileage);
-      // How would we run the car's driveToWork method?
-      car.driveToWork();
-      // How would we run the car's driveAroundWorld method?
-      car.driveAroundWorld();
-      // How would we run the getTuneUp method?
-      car.getTuneUp();
-
+     
 
 
      function newCar(make,model,mileage,color,price){
@@ -71,12 +69,15 @@
       this.mileage = mileage;
       this.color = color;
       this.price = price;
+      isWorking: true
     }
 
       var my_car = new newCar("Kia","Sportage",80000,"white","13000$");
+      function reWriteStats(){
       for (x in my_car){
         console.log(x+ ":" + my_car[x]);
       }
+    }
     </script>
     
   </body>
